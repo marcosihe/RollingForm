@@ -16,6 +16,10 @@ const handleSubmit = (e) => {
   setListaTareas([...listaTareas,tarea]);
   setTarea(''); // Para borrar el valor del state y por ende limpiar el input
 }
+const borrarTarea = (nombre) => {
+  let arraytFiltrado = listaTareas.filter( (elemento) => elemento != nombre );
+  setListaTareas(arraytFiltrado);
+}
 
   return (
     <div className='container my-5 d-flex flex-column align-items-center'>
@@ -32,7 +36,7 @@ const handleSubmit = (e) => {
         </div>
       </form>
       <article className="my-5 w-75">
-        <Lista></Lista>
+        <Lista listaTareas={listaTareas} borrarTarea={borrarTarea}></Lista>
       </article>
     </div>
   );
