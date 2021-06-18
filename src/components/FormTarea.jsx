@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Lista from "./Lista";
 
 const FormTarea = () => {
 
@@ -17,7 +18,7 @@ const handleSubmit = (e) => {
 }
 
   return (
-    <div className='container my-5 d-flex justify-content-center'>
+    <div className='container my-5 d-flex flex-column align-items-center'>
       <form className='w-75' onSubmit={handleSubmit}>
         <div className='d-flex mt-2 mb-2'>
           <input
@@ -30,6 +31,9 @@ const handleSubmit = (e) => {
           <button className='btn btn-outline-light' type='submit'>Agregar</button>
         </div>
       </form>
+      <article className="my-5 w-75">
+        <Lista></Lista>
+      </article>
     </div>
   );
 };
